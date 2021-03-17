@@ -3,7 +3,16 @@ function createCalculator(){
     display: document.querySelector('.display'),
     
     startCalc(){
-      this.clickButtons()  
+      this.clickButtons()
+      this.pressEnter()
+    },
+
+    pressEnter(){
+      this.display.addEventListener('keyup', e =>{
+        if(e.keyCode === 13){
+          this.makeAccount()
+        }
+      })
     },
 
     clearDisplay(){
