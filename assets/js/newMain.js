@@ -11,7 +11,19 @@ function createCalculator(){
     },
 
     makeAccount() {
-
+      let account = this.display.value
+      try{
+        account = eval(account);
+        
+        if(!account) {
+          alert('error');
+          return;
+        }
+        this.display.value = String(account)
+      } catch(e) {
+        alert('error');
+        return
+      }
     },
 
     deleteOne() {
